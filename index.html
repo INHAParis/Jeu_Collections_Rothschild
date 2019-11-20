@@ -1,0 +1,411 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1, user-scalable=no, maximum-scale=1, width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Généreux comme un Rothschild">
+        <link rel="apple-touch-icon" href="./images/icons-192.png">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Istok+Web&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Quel mécène Rothschild seriez-vous dans le domaine artistique ?</title>
+        <link rel="icon" href="./images/icons-192.gif" type="image/gif" />
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/functions.js"></script>
+        <script src="./js/clipboard-polyfill.js"></script>
+        </head>
+    <body onload="uncheckAll()">
+        <div class="startPage" id="startGame">
+            <center><input type="submit" id="startButton" onclick="startGame()" value="DEMARRER LE JEU"></center>
+            <br>
+            <center><a href="https://collections.rothschild.inha.fr/fr/uvres/selection-d-oeuvres/toutes-les-oeuvres/master-hare-par-joshua-reynolds.html" target="_blank"><img class="imgIntro" src="./images/Master_Hare_par_Reynolds_512.jpg" title="Sir Joshua Reynolds : Portrait de Francis George Hare (1786-1842), dit Master Hare, 1788, Musée du Louvre, département de Peintures (Paris), inv. R.F. 1580" /></a></center>
+            <center><p style="font-size:0.9em"><i><small>Ce jeu et cette page ne collectent aucun type de donnée personelle.</small></i></p></center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <center><p style="font-size:0.9em">Les contenus et la structure de ce jeu sont placés sous <a href="https://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank">licence CC by 4.0</a> - Laura de Fuccia et Federico Nurra (<a href="https://www.inha.fr/fr/index.html" target="_blank">INHA</a>).</p></center>
+            </div>
+        <div class="questions" id="domandaUno">
+            <h4>Pour constituer vos collections :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">vous fréquentez les ventes aux enchères et les antiquaires
+            <input type="radio" name="uno" value="B" onclick="addUno()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous achetez des œuvres directement auprès de jeunes artistes
+            <input type="radio" name="uno" value="E" onclick="addUno()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">parfois vous les réalisez vous-même
+            <input type="radio" name="uno" value="G" onclick="addUno()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">1</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaDue">
+            <h4>Concernant votre collection :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">elle s’insère dans la tradition familiale
+            <input type="radio" name="due" value="H" onclick="addDue()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous vous éloignez de la tradition familiale
+            <input type="radio" name="due" value="C" onclick="addDue()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous partagez cette passion avec votre conjoint
+            <input type="radio" name="due" value="A" onclick="addDue()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">2</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaTre">
+            <h4>Vous seriez capable de dépenser des sommes importantes :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">en estampes
+            <img class="imgReponses" src="./images/III.1.jpg" />
+            <input type="radio" name="tre" value="I" onclick="addTre()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">dans l'achat de porcelaines de la Renaissance italienne
+            <img class="imgReponses" src="./images/III.2.jpg" />
+            <input type="radio" name="tre" value="F" onclick="addTre()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">en art du XX<sup>e</sup> siècle
+            <img class="imgReponses" src="./images/III.3.jpg" />
+            <input type="radio" name="tre" value="D" onclick="addTre()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">3</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaQuattro">
+            <h4>Vous êtes entourés d’objets insolites parce que :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">votre conjoint collectionne de nombreux objets sur le thème de la tête de mort et du squelette
+            <img class="imgReponses" src="./images/IV.1.jpg" />
+            <input type="radio" name="quattro" value="B" onclick="addQuattro()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous constituez une collection de pipes et de boîtes d’allumettes
+            <img class="imgReponses" src="./images/IV.2.jpg" />
+            <input type="radio" name="quattro" value="C" onclick="addQuattro()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous vous procurez de précieux coffrets datant de la Renaissance au XVIII<sup>e</sup> siècle
+            <img class="imgReponses" src="./images/IV.3.jpg" />
+            <input type="radio" name="quattro" value="G" onclick="addQuattro()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">4</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaCinque">
+            <h4>Votre collection est tout particulièrement constituée :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">de tableaux du XX<sup>e</sup> siècle
+            <img class="imgReponses" src="./images/V.1.png" />
+            <input type="radio" name="cinque" value="D" onclick="addCinque()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">de livres et de manuscrits
+            <img class="imgReponses" src="./images/V.2.png" />
+            <input type="radio" name="cinque" value="I" onclick="addCinque()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">de dessins et de gravures
+            <img class="imgReponses" src="./images/V.3.jpg" />
+            <input type="radio" name="cinque" value="H" onclick="addCinque()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">5</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaSei">
+            <h4>Vous pensez exposer votre collection :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">dans une Villa du Sud de la France
+            <img class="imgReponses" src="./images/VI.1.jpg" />
+            <input type="radio" name="sei" value="F" onclick="addSei()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">à Paris, dans un hôtel particulier construit à votre goût, près de celui d’autres membres de votre famille
+            <img class="imgReponses" src="./images/VI.2.jpg" />
+            <input type="radio" name="sei" value="A" onclick="addSei()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">à Paris, dans un ancien hôtel particulier re-décoré à votre goût
+            <img class="imgReponses" src="./images/VI.3.jpg" />
+            <input type="radio" name="sei" value="E" onclick="addSei()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">6</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaSette">
+            <h4>Vous allez léguer des œuvres ou des objets d’art à l’État :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">il s’agit notamment d’autographes rares
+            <img class="imgReponses" src="./images/VII.1.jpg" />
+            <input type="radio" name="sette" value="B" onclick="addSette()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous financez des fouilles en Grèce et Asie Mineure afin de vous procurer des antiques
+            <img class="imgReponses" src="./images/VII.2.jpg" />
+            <input type="radio" name="sette" value="H" onclick="addSette()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous privilégiez des objets d’art extra-occidentaux
+            <img class="imgReponses" src="./images/VII.3.jpg" />
+            <input type="radio" name="sette" value="D" onclick="addSette()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">7</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaOtto">
+            <h4>Vous ou votre famille allez céder à l’État ou ouvrir au public une de vos demeures :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">vous la destinez à devenir une « maison d’art »
+            <input type="radio" name="otto" value="A" onclick="addOtto()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous souhaitez qu’elle soit ouverte au public et qu’elle reste telle que vous l’avez conçue
+            <input type="radio" name="otto" value="F" onclick="addOtto()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous ouvrez régulièrement à vos concitoyens les jardins habités d’essences et fleurs rares de votre villa
+            <input type="radio" name="otto" value="C" onclick="addOtto()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">8</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaNove">
+            <h4>Vous souhaitez contribuer à la valorisation, création ou promotion d’institutions dans le domaine culturel :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">votre collections enrichira la Bibliothèque nationale de France
+            <input type="radio" name="nove" value="I" onclick="addNove()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous soutenez l’enrichissement et la création de musées dans toute la France
+            <input type="radio" name="nove" value="E" onclick="addNove()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous soutenez l’enrichissement ou la création d’un musée des Arts décoratifs
+            <input type="radio" name="nove" value="G" onclick="addNove()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">9</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaDieci">
+            <h4>En ce qui concerne votre lien avec le milieu artistique et culturel de votre temps :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">vous fondez la <i>Société des anciens textes français</i>
+            <img class="imgReponses" src="./images/X.1.jpg" />
+            <input type="radio" name="dieci" value="I" onclick="addDieci()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous protégez des jeunes peintres, sculpteurs ou graveurs
+            <img class="imgReponses" src="./images/X.2.jpg" />
+            <input type="radio" name="dieci" value="E" onclick="addDieci()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous protégez notamment des musiciens
+            <img class="imgReponses" src="./images/X.3.jpg" />
+            <input type="radio" name="dieci" value="G" onclick="addDieci()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">10</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaUndici">
+            <h4>Dans le domaine des arts extra-européens :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">vous vous intéressez aux archétypes de l’art africain
+            <img class="imgReponses" src="./images/XI.1.jpg" />
+            <input type="radio" name="undici" value="D" onclick="addUndici()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">votre collection d’art asiatique est remarquable
+            <img class="imgReponses" src="./images/XI.2.jpg" />
+            <input type="radio" name="undici" value="A" onclick="addUndici()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">vous vous intéressez aux antiquités de l’Asie mineure
+            <img class="imgReponses" src="./images/XI.3.jpg" />
+            <input type="radio" name="undici" value="H" onclick="addUndici()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">11</span>/12</h1>
+        </div>
+        <div class="questions" id="domandaDodici">
+            <h4>Parmi les lieux où vous aimez séjourner, vous aimeriez notamment résider :</h4>
+            <div class="content-richtext-start"><!--empty--></div><br>
+            <label class="container">dans une ancienne abbaye redécorée par votre famille
+            <img class="imgReponses" src="./images/XII.1.jpg" />
+            <input type="radio" name="dodici" value="B" onclick="addDodici()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">dans une ville italianisante dans le Sud de la France
+            <img class="imgReponses" src="./images/XII.2.jpg" />
+            <input type="radio" name="dodici" value="F" onclick="addDodici()">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">dans un manoir dans la campagne anglaise
+            <img class="imgReponses" src="./images/XII.3.jpg" />
+            <input type="radio" name="dodici" value="C" onclick="addDodici()">
+            <span class="checkmark"></span>
+            </label><br><br>
+            <h1 class="counter"><span style="color:#1e6b85">12</span>/12</h1>
+        </div>
+        <div class="verify" id="finalVerification">
+            <center><input id="finalButton" type="submit" onclick="finalResults()" value="RESULTAT DU JEU"></center>
+        </div>
+        <div class="bio" id="A">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/adele-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Adèle</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/adele-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/adele_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsAdele()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipAdele">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="B">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/henri-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Henri</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/henri-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/henri_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsHenri()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipHenri">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="C">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/alice-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Alice</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/alice-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/alice_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsAlice()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipAlice">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="D">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/jusqu-a-nos-jours/alix-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Alix</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/jusqu-a-nos-jours/alix-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/alix_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsAlix()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipAlix">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="E">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/alphonse-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Alphonse</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/alphonse-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/alphonse_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsAlphonse()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipAlphonse">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="F">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/beatrice-ephrussi-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Béatrice</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1922-a-1935/beatrice-ephrussi-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/beatrice_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsBeatrice()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipBeatrice">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="G">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/charlotte-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Charlotte</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/charlotte-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/charlotte_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsCharlotte()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipCharlotte">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="H">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/edmond-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>Edmond</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/edmond-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/edmond_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsEdmond()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipEdmond">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <div class="bio" id="I">
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/james-edouard-de-rothschild.html" target="_blank"><h1 class="rothschild"><br>James-Edouard</h1></a></center>
+            <center><a href="https://collections.rothschild.inha.fr/fr/mecenes/biographies-des-donateurs/de-1873-a-1922/james-edouard-de-rothschild.html" target="_blank"><img class="imgFinal" src="./images/james_edouard_de_rothschild.jpg" /></a></center>
+            <center>
+            <p class="infoTemp">Cliquez sur le nom ou sur l'image pour lire sa biographie sur le site</p><br>
+            <p class="infoTemp">Partagez votre résultat en copiant le lien : </p>
+            <div class="tooltip">
+            <button id="copyButton" onclick="copyResultsJames()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltipJames">Copy to clipboard</span><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            </div>
+            </center>
+            <br>
+            <div class="content-richtext-start"><!--empty--></div>
+            <center>
+            <input type="submit" id="reloadButton" onclick="location.reload(true)" value="REJOUER">
+            </center>
+        </div>
+        <script>
+
+        </script>
+    </body>
+</html>
