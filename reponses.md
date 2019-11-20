@@ -1,38 +1,38 @@
-#Réponses jeu Rothschild
+# Réponses jeu Rothschild
 
-1	A	B
-1	B	E
-1	C	G
-2	A	H
-2	B	C
-2	C	A
-3	A	I
-3	B	F
-3	C	D
-4	A	B
-4	B	C
-4	C	G
-5	A	D
-5	B	I
-5	C	H
-6	A	F
-6	B	A
-6	C	E
-7	A	B
-7	B	H
-7	C	D
-8	A	A
-8	B	F
-8	C	C
-9	A	I
-9	B	E
-9	C	G
-10	A	I
-10	B	E
-10	C	G
-11	A	D
-11	B	A
-11	C	H
-12	A	B
-12	B	F
-12	C	C
+* 1	A	B
+* 1	B	E
+* 1	C	G
+* 2	A	H
+* 2	B	C
+* 2	C	A
+* 3	A	I
+* 3	B	F
+* 3	C	D
+* 4	A	B
+* 4	B	C
+* 4	C	G
+* 5	A	D
+* 5	B	I
+* 5	C	H
+* 6	A	F
+* 6	B	A
+* 6	C	E
+* 7	A	B
+* 7	B	H
+* 7	C	D
+* 8	A	A
+* 8	B	F
+* 8	C	C
+* 9	A	I
+* 9	B	E
+* 9	C	G
+* 10	A	I
+* 10	B	E
+* 10	C	G
+* 11	A	D
+* 11	B	A
+* 11	C	H
+* 12	A	B
+* 12	B	F
+* 12	C	C
