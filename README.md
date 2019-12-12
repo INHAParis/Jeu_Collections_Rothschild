@@ -6,7 +6,7 @@ Vous pouvez jouer [en cliquant ici](https://collections.rothschild.inha.fr/fr/qu
 
 ## Structure du jeu
 
-La structure du jeu se compose de quatre blocs de trois questions x trois réponses (9 options A-I)
+La structure du jeu se compose de quatre blocs de trois questions pour trois réponses chacun (9 options A-I)
 
 | Q | R (A) | R (B) | R (C) |
 | :----: | :----: | :----: | :----: |
