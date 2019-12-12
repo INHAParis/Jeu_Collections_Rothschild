@@ -4,23 +4,28 @@ Ce jeu, conçu par Laura de Fuccia dans le cadre du programme « [Les collection
 
 Vous pouvez jouer [en cliquant ici](https://collections.rothschild.inha.fr/fr/quel-rothschild-etes-vous.html)
 
-La structure du jeu se compose de quatre blocs de trois questions x 3 réponses (9 options A-I)
+## Structure du jeu
 
-| Q | R(A) | R(B) | R(C) |
+La structure du jeu se compose de quatre blocs de trois questions x trois réponses (9 options A-I)
+
+| Q | R (A) | R (B) | R (C) |
 | :----: | :----: | :----: | :----: |
 | 1 | A | B | C |
 | 2 | D | E | F |
 | 3 | G | H | I |
 
-Il suffit mélanger les 9 options (A-I) dans les différents blocs selon l'ordre des questions et des réponses. Par exemple :
+Il suffit mélanger les 9 options (A-I) dans les différents blocs selon l'ordre des questions et des réponses. 
+Par exemple :
 
-| Q | R(A) | R(B) | R(C) |
+| Q | R (A) | R (B) | R (C) |
 | :----: | :----: | :----: | :----: |
 | 1 | B | C | G |
 | 2 | D | I | H |
 | 3 | F | A | E |
 
 Chaque réponse ajoute une valeure à un array (var results = [];). La valeur que remporte plus d'occurences, détermine le resultat final.
+
+## Références
 
 Voir la [Table récapitulative des questions](https://github.com/INHAParis/Jeu_Collections_Rothschild/blob/master/reponses.md) (**Q** -> 1-12), réponses (**R** -> A-C), et valeurs des resultats (**V** -> A-I)
 
